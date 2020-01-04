@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
         {
             Shoot();
+            FindObjectOfType<AudioManager>().Play("PistolShot");
             nextTimeToFire = Time.time + 1f/fireRate;
         }
     }

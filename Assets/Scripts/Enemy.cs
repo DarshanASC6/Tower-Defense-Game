@@ -11,22 +11,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
-    }
-
-    void Shoot()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, out hit, range))
-        {
-            Debug.Log(hit.transform.name);
-
-            Objective objective = hit.transform.GetComponent<Objective>();
-            if (hit.rigidbody != null)
-            {
-                objective.TakeDamage(damage);
-            }
-        }
+        
     }
 
     public void TakeDamage(float amount)

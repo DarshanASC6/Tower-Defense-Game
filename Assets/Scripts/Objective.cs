@@ -2,11 +2,11 @@
 
 public class Objective : MonoBehaviour
 {
-    public float health = 50f;
+    public float health = 100f;
 
-    public void TakeDamage(float amount)
+    void OnCollisionEnter (Collision col)
     {
-        health -= amount;
+        health -= 25;
         if (health <= 0)
         {
             Die();
@@ -15,6 +15,7 @@ public class Objective : MonoBehaviour
 
     void Die()
     {
+        FindObjectOfType<AudioManager>().Play("Game Over");
         Destroy(gameObject);
     }
 }
