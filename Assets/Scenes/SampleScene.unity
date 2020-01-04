@@ -155,8 +155,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26581094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23, y: 12.63, z: 0.14}
+  m_LocalRotation: {x: -0, y: -0.9999115, z: -0, w: -0.013307147}
+  m_LocalPosition: {x: 1.23, y: 29.65, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534669905}
@@ -164,7 +164,7 @@ Transform:
   - {fileID: 798079746}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -181.525, z: 0}
 --- !u!114 &26581097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36184091}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c4f64ddb0a67c3d4c84301fc6a44f6ea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -483,7 +483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352259109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -17.63}
+  m_LocalPosition: {x: 0, y: -7.7, z: -30}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 1419838903}
@@ -504,7 +504,9 @@ MonoBehaviour:
   health: 100
   damage: 10
   range: 1
+  moveSpeed: 1000
   enemy: {fileID: 352259109}
+  rb: {fileID: 352259112}
 --- !u!54 &352259112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -751,7 +753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518550989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1, z: 25.3}
+  m_LocalPosition: {x: -0.3, y: -7.7, z: 30}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 1419838903}
@@ -772,7 +774,9 @@ MonoBehaviour:
   health: 100
   damage: 10
   range: 1
+  moveSpeed: -1000
   enemy: {fileID: 518550989}
+  rb: {fileID: 518550992}
 --- !u!54 &518550992
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1019,14 +1023,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.38326344, y: -0, z: -0, w: 0.9236391}
   m_LocalPosition: {x: -0.012, y: 1.61, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1090114924}
   m_Father: {fileID: 26581096}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.072002, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,8 +1113,8 @@ GameObject:
   - component: {fileID: 779322141}
   - component: {fileID: 779322140}
   - component: {fileID: 779322139}
-  - component: {fileID: 779322144}
   - component: {fileID: 779322145}
+  - component: {fileID: 779322144}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -1200,7 +1204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779322138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.6, y: 1.149, z: -0.7}
+  m_LocalPosition: {x: -30, y: -7.7, z: -0.7}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 1419838903}
@@ -1215,13 +1219,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 779322138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc2d698dfc468c4ab560dc053c3b4a1, type: 3}
+  m_Script: {fileID: 11500000, guid: cd7f741104659d14a969bcdbec018b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
   damage: 10
   range: 1
+  moveSpeed: 1000
   enemy: {fileID: 779322138}
+  rb: {fileID: 779322139}
 --- !u!82 &779322145
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1909,8 +1915,8 @@ GameObject:
   - component: {fileID: 1907832317}
   - component: {fileID: 1907832316}
   - component: {fileID: 1907832315}
-  - component: {fileID: 1907832314}
   - component: {fileID: 1907832319}
+  - component: {fileID: 1907832314}
   m_Layer: 9
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -1926,7 +1932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907832312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.6, y: 0.40999985, z: -1.2}
+  m_LocalPosition: {x: 30, y: -7.7, z: -1.2}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 1419838903}
@@ -1941,13 +1947,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907832312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc2d698dfc468c4ab560dc053c3b4a1, type: 3}
+  m_Script: {fileID: 11500000, guid: cd7f741104659d14a969bcdbec018b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
   damage: 10
   range: 1
+  moveSpeed: -1000
   enemy: {fileID: 1907832312}
+  rb: {fileID: 1907832315}
 --- !u!54 &1907832315
 Rigidbody:
   m_ObjectHideFlags: 0

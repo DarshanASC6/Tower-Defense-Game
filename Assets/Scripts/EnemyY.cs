@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyY : MonoBehaviour
 {
     public float health = 50f;
     public float damage = 10f;
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(0, 0, moveSpeed * Time.deltaTime);
+        rb.AddForce(moveSpeed, 0, 0 * Time.deltaTime);
     }
 
     public void TakeDamage(float amount)
