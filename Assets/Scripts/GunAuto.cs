@@ -29,7 +29,7 @@ public class GunAuto : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+            Enemy target = hit.transform.GetComponent<Enemy>();
             if (target != null)
             {
                 target.TakeDamage(damage);

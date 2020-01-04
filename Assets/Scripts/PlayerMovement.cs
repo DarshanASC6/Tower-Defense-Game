@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 12f;
+    public float sprintSpeed = 30f;
     public float gravity = -9.81f;
     public float jumpHeight = 30f;
 
@@ -39,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(move * (speed + sprintSpeed) * Time.deltaTime);
+        }
+
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
