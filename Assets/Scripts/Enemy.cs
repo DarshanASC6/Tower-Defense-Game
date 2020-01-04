@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
     public float health = 50f;
     public float damage = 10f;
     public float range = 1;
-    public float moveSpeed = 1000;
+    public float moveSpeed = 500;
     public GameObject enemy;
     public Rigidbody rb;
 
