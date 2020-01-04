@@ -34,10 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (isGrounded)
-        {
-            Debug.Log("Grounded");
-        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
