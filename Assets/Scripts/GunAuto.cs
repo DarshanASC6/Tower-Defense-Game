@@ -18,6 +18,7 @@ public class GunAuto : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             Shoot();
+            FindObjectOfType<AudioManager>().Play("AR Shot");
             nextTimeToFire = Time.time + 1f / fireRate;
         }
     }
@@ -33,6 +34,17 @@ public class GunAuto : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(damage);
+            }
+
+            if (hit.rigidbody != null)
+            {
+                hit.rigidbody.AddForce(-hit.normal * impactForce);
+            }
+
+            EnemyY target2 = hit.transform.GetComponent<EnemyY>();
+            if (target2 != null)
+            {
+                target2.TakeDamage(damage);
             }
 
             if (hit.rigidbody != null)

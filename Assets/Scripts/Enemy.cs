@@ -25,6 +25,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Defend")
+        {
+            Die();
+        }
+    }
     void Die()
     {
         Destroy(gameObject);

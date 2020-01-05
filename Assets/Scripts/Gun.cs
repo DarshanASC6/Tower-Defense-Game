@@ -36,6 +36,12 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
+            EnemyY target2 = hit.transform.GetComponent<EnemyY>();
+            if (target2 != null)
+            {
+                target2.TakeDamage(damage);
+            }
+
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);

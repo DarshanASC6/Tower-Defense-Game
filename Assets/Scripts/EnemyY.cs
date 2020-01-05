@@ -5,7 +5,7 @@ public class EnemyY : MonoBehaviour
     public float health = 50f;
     public float damage = 10f;
     public float range = 1;
-    public float moveSpeed = 250;
+    public float moveSpeed = 500;
     public GameObject enemy;
     public Rigidbody rb;
 
@@ -13,7 +13,7 @@ public class EnemyY : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(moveSpeed, 0, 0 * Time.deltaTime);
+        rb.AddForce(moveSpeed * Time.deltaTime, 0, 0 );
     }
 
     public void TakeDamage(float amount)
@@ -24,7 +24,13 @@ public class EnemyY : MonoBehaviour
             Die();
         }
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Defend")
+        {
+            Die();
+        }
+    }
     void Die()
     {
         Destroy(gameObject);
