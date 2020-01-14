@@ -19,7 +19,7 @@ public class GunAuto : MonoBehaviour
         {
             Shoot();
             FindObjectOfType<AudioManager>().Play("AR Shot");
-            nextTimeToFire = Time.time + 1f / fireRate;
+            nextTimeToFire = Time.time + 1f/fireRate;
         }
     }
 

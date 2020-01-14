@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float impactForce = 30f;
     public float fireRate = 15f;
+    public bool isAuto;
 
     public Camera fpsCam;
     private float nextTimeToFire = 0f;
@@ -20,6 +21,13 @@ public class Gun : MonoBehaviour
             Shoot();
             FindObjectOfType<AudioManager>().Play("PistolShot");
             nextTimeToFire = Time.time + 1f/fireRate;
+        }
+
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && isAuto == true)
+        {
+            Shoot();
+            FindObjectOfType<AudioManager>().Play("PistolShot");
+            nextTimeToFire = Time.time + 1f / fireRate;
         }
     }
 

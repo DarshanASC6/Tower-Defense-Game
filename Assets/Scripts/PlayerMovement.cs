@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 30f;
     public float gravity = -9.81f;
     public float jumpHeight = 30f;
+    public float crouchHeight = -0.5f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -41,7 +42,17 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.C))
+        {
+            transform.localScale = new Vector3(1,crouchHeight,1);
+        }
+        
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded)
         {
             controller.Move(move * (speed + sprintSpeed) * Time.deltaTime);
         }
