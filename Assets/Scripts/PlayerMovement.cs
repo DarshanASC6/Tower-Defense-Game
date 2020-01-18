@@ -6,11 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 12f;
-    public float sprintSpeed = 30f;
+    public float speed = 5f;
+    public float sprintSpeed = 310f;
     public float gravity = -9.81f;
     public float jumpHeight = 30f;
     public float crouchHeight = -0.5f;
+    public float crouchSpeed = 10f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.C))
         {
             transform.localScale = new Vector3(1,crouchHeight,1);
+            controller.Move(move * (speed - crouchSpeed) * Time.deltaTime);
         }
         
         else
