@@ -1209,7 +1209,7 @@ MonoBehaviour:
   range: 175
   impactForce: 50
   fireRate: 15
-  isAuto: 0
+  isAuto: 1
   fpsCam: {fileID: 534669904}
 --- !u!1001 &1281681361
 PrefabInstance:
@@ -1549,7 +1549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1419838903
 Transform:
   m_ObjectHideFlags: 0
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   range: 100
   impactForce: 30
   fireRate: 15
-  isAuto: 1
+  isAuto: 0
   fpsCam: {fileID: 534669904}
 --- !u!1 &2114118120
 GameObject:
