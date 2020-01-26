@@ -15,18 +15,9 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        if ((isAuto ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1")) && Time.time >= nextTimeToFire)
         {
             Shoot();
-            FindObjectOfType<AudioManager>().Play("PistolShot");
-            nextTimeToFire = Time.time + 1f/fireRate;
-        }
-
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && isAuto == true)
-        {
-            Shoot();
-            FindObjectOfType<AudioManager>().Play("PistolShot");
             nextTimeToFire = Time.time + 1f / fireRate;
         }
     }
